@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,20 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController, public menu: MenuController) { }
 
   ngOnInit() {
+
+
   }
   login() {
-    this.navCtrl.navigateForward('Categoria');
+    this.navCtrl.navigateForward('categoria');
 
+  }
+ionViewWillEnter(){
+  this.menu.enable(false);
 }
+ionViewDidLeave(){
+  this.menu.enable(true);
+ }
 }

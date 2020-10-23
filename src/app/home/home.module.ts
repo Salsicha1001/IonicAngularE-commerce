@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, MenuController } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
@@ -12,7 +12,7 @@ import { HomePage } from './home.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
   ],
   declarations: [HomePage]
 })
