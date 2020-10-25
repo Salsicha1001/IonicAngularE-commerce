@@ -1,4 +1,17 @@
 <ion-app>
-  <ion-menu content-id="menu" type="push"></ion-menu>
+  <ion-menu content-id="menu" type="push">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list *ngFor="let item of pages">
+        <ion-menu-toggle  auto-hide="true">
+        <ion-item routerLink="/{{item.component}}">{{item.title}}</ion-item>
+ </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
   <ion-router-outlet id="menu"></ion-router-outlet>
 </ion-app>

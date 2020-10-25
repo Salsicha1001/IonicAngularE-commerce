@@ -7,5 +7,12 @@
 </ion-header>
 
 <ion-content>
-<p>Pagina de Categoria</p>
+<ion-list *ngFor="let o of items" >
+    <button ion-item >
+        <ion-thumbnail>
+            <img src="assets/img/NoPhotography-512.png">
+        </ion-thumbnail>
+        <h2>{{o.name}}</h2>
+    </button>
+</ion-list>
 </ion-content>
