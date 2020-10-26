@@ -1,7 +1,7 @@
 import { StorageService } from './../Service/storage.service';
-import { LocalUser } from './../../models/local_user';
+import { LocalUser } from '../models/local_user';
 import { AuthService } from './../Service/auth.service';
-import { credencialDTO } from './../../models/credenciaisDTO.model';
+import { credencialDTO } from '../models/credenciaisDTO.model';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
 

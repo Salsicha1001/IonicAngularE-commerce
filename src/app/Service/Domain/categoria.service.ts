@@ -1,4 +1,4 @@
-import { CategoriaDTO } from './../../../models/categoria.dto';
+import { CategoriaDTO } from '../../models/categoria.dto';
 import { API_CONFIG } from './../../../Config/api.config';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
