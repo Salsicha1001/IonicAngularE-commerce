@@ -1,3 +1,4 @@
+import { AuthService } from './Service/auth.service';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { Platform } from '@ionic/angular';
@@ -13,13 +14,14 @@ export class AppComponent implements OnInit {
   pages: Array<{ title: string; component: string; }>;
   constructor(private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar) {
+    private statusBar: StatusBar,
+    private authService: AuthService) {
 
     this.sideMenu();
     this.initializeApp();
   }
   ngOnInit() {
-  
+
   }
 
   initializeApp() {
@@ -31,11 +33,17 @@ export class AppComponent implements OnInit {
 
   sideMenu() {
     this.pages = [
+      { title: "Perfil", component: "profile" },
       { title: "Categoria", component: "categoria" },
-      { title: "Perfil", component: "profile" }
+      { title: "Logout", component: '' }
     ];
   }
 
+  ButtonClick(s) {
+    if ("Logout" === s) {
+      this.authService.logout();
+    }
 
+  }
 
 }
