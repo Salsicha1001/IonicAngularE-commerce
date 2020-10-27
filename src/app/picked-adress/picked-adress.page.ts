@@ -5,6 +5,7 @@ import { NavController } from '@ionic/angular';
 import { PedidoDTO } from './../models/pedido.model';
 import { EnderecoDTO } from './../models/EnderecoDTO.model';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-picked-adress',
@@ -17,7 +18,8 @@ export class PickedAdressPage implements OnInit {
   constructor(public navCtrl: NavController, 
     public storage: StorageService,
     public clienteService: ClienteService,
-    public cartService: CartService) { }
+    public cartService: CartService,
+    private router:Router) { }
 
   ngOnInit() {
     let localUser = this.storage.getLocalUser();
@@ -46,8 +48,9 @@ this.navCtrl.navigateForward('home');
     }
   }
   nextPage(item: EnderecoDTO) {
-    this.pedido.enderecoDeEntrega = {id: item.id};
-    this.navCtrl.navigateForward(['payment', {pedido: this.pedido}]);
+    this.pedido.enderecoDeEntrega = { id: item.id };
+    this.router.navigateByUrl('/payment', {
+      state: { pedido: this.pedido }
+    });
   }
-
 }

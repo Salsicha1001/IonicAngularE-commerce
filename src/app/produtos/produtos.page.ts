@@ -56,7 +56,7 @@ export class ProdutosPage implements OnInit {
     this.items = [];
     this.loadData();
     setTimeout(() => {
-      refresher.complete();
+      refresher.target.complete();
     }, 1000);
   }
 
