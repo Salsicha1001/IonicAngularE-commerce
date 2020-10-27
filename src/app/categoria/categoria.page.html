@@ -8,7 +8,7 @@
 
 <ion-content>
 <ion-list *ngFor="let o of items" >
-    <button ion-item >
+    <button ion-item (click)="showProdutos(o.id)">
         <ion-thumbnail>
             <img src="assets/img/NoPhotography-512.png">
         </ion-thumbnail>

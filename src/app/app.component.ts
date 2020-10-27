@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
     this.pages = [
       { title: "Perfil", component: "profile" },
       { title: "Categoria", component: "categoria" },
+      { title: "Cart", component: "cart" },
       { title: "Logout", component: '' }
     ];
   }

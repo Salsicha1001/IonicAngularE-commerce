@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="categoria"></ion-back-button>
+    </ion-buttons>
+    <ion-label>Produtos</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)"  slot="fixed">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!--<ion-fab top right edge>
+    <ion-button navPush="CartPage" ion-fab mini><ion-icon name="cart"></ion-icon></ion-button>
+  </ion-fab>-->
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="detais(item.id)">
+      <ion-thumbnail item-start>
+        <img src= "../../assets/img/NoPhotography-512.png">
+      </ion-thumbnail>
+      <h2>{{item.nome}}</h2>
+      <p>{{item.price | currency}}</p>
+ </button>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>  
+</ion-content>

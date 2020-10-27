@@ -46,5 +46,7 @@ export class HomePage implements OnInit {
     })
   }
 
-
+  singup() {
+    this.navCtrl.navigateForward('signup');
+}
 }
