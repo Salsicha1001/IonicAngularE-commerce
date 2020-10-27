@@ -1,3 +1,4 @@
+import { CartService } from './Service/Domain/cart.service';
 import { ErrorInterceptorProvider } from './interceptors/error.interceptor';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptors';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
@@ -31,6 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
     CategoriaService,
     JwtHelperService,
     ErrorInterceptorProvider,
+    CartService
   ],
   
   bootstrap: [AppComponent]

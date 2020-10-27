@@ -12,8 +12,8 @@ export class ClienteService {
 
   constructor(private http: HttpClient, private storage: StorageService) { }
 
-  findEmail(email: string): Observable<ClienteDTO> {
-    return this.http.get<ClienteDTO>(`${API_CONFIG.base_url}/clientes/email?value=${email}`);
+  findEmail(email: string) {
+    return this.http.get(`${API_CONFIG.base_url}/clientes/email?value=${email}`);
   }
   findById(id: string) {
     return this.http.get(`${API_CONFIG.base_url}/clientes/${id}`);
@@ -28,4 +28,5 @@ export class ClienteService {
       }
     );
   }
+  
 }

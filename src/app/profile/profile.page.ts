@@ -20,7 +20,7 @@ export class ProfilePage implements OnInit {
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
       this.clientService.findEmail(localUser.email).subscribe((u) => {
-        this.c = u;
+        this.c = u as ClienteDTO;
       },
         error => {
           if (error.status === 403) {

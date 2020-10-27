@@ -28,6 +28,14 @@ const routes: Routes = [
     path: 'cart',
     loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
   },
+  {
+    path: 'picked-adress',
+    loadChildren: () => import('./picked-adress/picked-adress.module').then( m => m.PickedAdressPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
+  },
 
 ];
 

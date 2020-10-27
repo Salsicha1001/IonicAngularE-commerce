@@ -42,6 +42,6 @@ export class CartPage implements OnInit {
   }
 
   checkout() {
-   // this.navCtrl.nav('PickAddressPage');
+   this.navCtrl.navigateForward('picked-adress');
   }
 }
